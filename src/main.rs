@@ -36,9 +36,9 @@ async fn ws_handler(
         String::from("Unknown browser")
     };
     println!("{agent} has connected to server with address {addr}");
-    ws.on_upgrade(move |socket| {
+    ws.on_upgrade(move |socket| 
         handle_socket(socket, addr)
-    })
+    )
 }
 
 async fn handle_socket(mut socket : WebSocket, who : SocketAddr) {
